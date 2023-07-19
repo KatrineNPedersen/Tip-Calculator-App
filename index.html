@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="splitter-logo" />
+    </header>
+    <main>
+      <section id="submit-calculation">
+        <div id="bill">
+          <h1>Bill</h1>
+          <form action="#">
+            <label for="bill-amount"
+              ><img src="./images/icon-dollar.svg" alt="icon-dollar"
+            /></label>
+            <input type="number" name="bill-amount" id="bill-amount" />
+          </form>
+        </div>
+        <div id="tip">
+          <h2>Select Tip %</h2>
+          <form action="#">
+            <input class="tip tip-5" type="button" value="5%" />
+            <input class="tip tip-10" type="button" value="10%" />
+            <input class="tip tip-15" type="button" value="15%" />
+            <input class="tip tip-25" type="button" value="25%" />
+            <input class="tip tip-50" type="button" value="50%" />
+            <input
+              type="number"
+              name="custom"
+              id="custom"
+              placeholder="Custom"
+            />
+          </form>
+        </div>
+        <div id="people">
+          <h2>Number of People</h2>
+          <form class="form" action="#">
+            <label for="number-of-people"
+              ><img src="./images/icon-person.svg" alt="icon-person"
+            /></label>
+            <input
+              type="number"
+              name="number-of-people"
+              id="number-of-people"
+            />
+            <p class="error hidden">Can't be zero</p>
+          </form>
+        </div>
+        </div>
+      </section>
+      <section id="finished-calculation">
+        <div id="overview">
+          <div class="calculation-overview">
+          <div class="total tip-total">
+            <div class="tip-overview">
+              <h3>Tip Amount</h3>
+              <h4>/ person</h4>
+            </div>
+
+            <div class="tip-per-person">
+              <p class="tip-per-person-amount">$0.00</p>
+            </div>
+          </div>
+          <div class="total amount-total">
+            <div class="total-overview">
+              <h3>Total</h3>
+              <h4>/ person</h4>
+            </div>
+            <div class="total-per-person">
+              <p class="total-per-person-amount">$0.00</p>
+            </div>
+          </div>
+          </div>
+          <button>RESET</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          href="https://www.frontendmentor.io/profile/KatrineNPedersen"
+          target="_blank"
+          >Katrine N Pedersen</a
+        >.
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

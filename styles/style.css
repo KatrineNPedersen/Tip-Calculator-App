@@ -1,0 +1,347 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(184, 14%, 56%);
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 15%;
+  width: 100%;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 100%);
+  height: 85%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 375px;
+  justify-content: center;
+}
+body main #submit-calculation {
+  height: 60%;
+  width: 85%;
+}
+body main #submit-calculation #bill {
+  height: 20%;
+  width: 100%;
+}
+body main #submit-calculation #bill h1 {
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+body main #submit-calculation #bill form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: hsl(202, 50%, 97%);
+  border-radius: 5px;
+  height: 50%;
+}
+body main #submit-calculation #bill form:hover {
+  border: 1px solid hsl(172, 67%, 45%);
+  cursor: pointer;
+}
+body main #submit-calculation #bill form #bill-amount {
+  width: 80%;
+  height: 90%;
+  border: none;
+  outline: none;
+  background-color: hsl(202, 50%, 97%);
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+}
+body main #submit-calculation #tip {
+  height: 50%;
+}
+body main #submit-calculation #tip h2 {
+  font-size: 17px;
+}
+body main #submit-calculation #tip form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-column-gap: 6%;
+  grid-row-gap: 10%;
+  height: 70%;
+}
+body main #submit-calculation #tip form .tip {
+  border-radius: 6px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  border: none;
+}
+body main #submit-calculation #tip form .tip:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+body main #submit-calculation #tip form .tip-selected {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+body main #submit-calculation #tip form #custom {
+  border: none;
+  outline: none;
+  background-color: hsl(202, 50%, 97%);
+  text-align: right;
+  color: hsl(186, 14%, 43%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+}
+body main #submit-calculation #tip form #custom:hover {
+  border: 1px solid hsl(172, 67%, 45%);
+  cursor: pointer;
+}
+body main #submit-calculation #tip form #custom::-moz-placeholder {
+  text-align: right;
+  color: hsl(186, 14%, 43%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  padding-right: 5%;
+}
+body main #submit-calculation #tip form #custom::placeholder {
+  text-align: right;
+  color: hsl(186, 14%, 43%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  padding-right: 5%;
+}
+body main #submit-calculation #people {
+  height: 20%;
+  width: 100%;
+}
+body main #submit-calculation #people h2 {
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+body main #submit-calculation #people .error-form {
+  border: 1px solid orangered;
+}
+body main #submit-calculation #people form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: hsl(202, 50%, 97%);
+  border-radius: 5px;
+  height: 50%;
+  position: relative;
+}
+body main #submit-calculation #people form:hover {
+  border: 1px solid hsl(172, 67%, 45%);
+  cursor: pointer;
+}
+body main #submit-calculation #people form #number-of-people {
+  width: 80%;
+  height: 90%;
+  border: none;
+  outline: none;
+  background-color: hsl(202, 50%, 97%);
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+}
+body main #submit-calculation #people form .error {
+  position: absolute;
+  color: orangered;
+  font-size: 13px;
+  right: 0;
+  top: -75%;
+}
+body main #submit-calculation #people form .hidden {
+  display: none;
+}
+body main #finished-calculation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30%;
+  width: 85%;
+}
+body main #finished-calculation #overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+body main #finished-calculation #overview .calculation-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 50%;
+}
+body main #finished-calculation #overview .calculation-overview .tip-total,
+body main #finished-calculation #overview .calculation-overview .amount-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+}
+body main #finished-calculation #overview .calculation-overview .tip-total .tip-overview,
+body main #finished-calculation #overview .calculation-overview .tip-total .total-overview,
+body main #finished-calculation #overview .calculation-overview .amount-total .tip-overview,
+body main #finished-calculation #overview .calculation-overview .amount-total .total-overview {
+  width: 50%;
+}
+body main #finished-calculation #overview .calculation-overview .tip-total .tip-overview h3,
+body main #finished-calculation #overview .calculation-overview .tip-total .total-overview h3,
+body main #finished-calculation #overview .calculation-overview .amount-total .tip-overview h3,
+body main #finished-calculation #overview .calculation-overview .amount-total .total-overview h3 {
+  font-size: 17px;
+  margin-bottom: 0;
+  color: hsl(0, 0%, 100%);
+}
+body main #finished-calculation #overview .calculation-overview .tip-total .tip-overview h4,
+body main #finished-calculation #overview .calculation-overview .tip-total .total-overview h4,
+body main #finished-calculation #overview .calculation-overview .amount-total .tip-overview h4,
+body main #finished-calculation #overview .calculation-overview .amount-total .total-overview h4 {
+  font-size: 12px;
+  margin-top: 0;
+}
+body main #finished-calculation #overview .calculation-overview .tip-total .tip-per-person,
+body main #finished-calculation #overview .calculation-overview .tip-total .total-per-person,
+body main #finished-calculation #overview .calculation-overview .amount-total .tip-per-person,
+body main #finished-calculation #overview .calculation-overview .amount-total .total-per-person {
+  text-align: right;
+  width: 50%;
+  font-size: 30px;
+  color: hsl(172, 67%, 45%);
+}
+body main #finished-calculation #overview button {
+  font-family: "Space Mono", monospace;
+  font-size: 20px;
+  background-color: hsl(172, 67%, 45%);
+  width: 85%;
+  height: 20%;
+  border-radius: 8px;
+  border: none;
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+body main #finished-calculation #overview button:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+body footer {
+  position: absolute;
+  bottom: 2%;
+}
+body footer .attribution {
+  font-size: 8px;
+  text-align: center;
+}
+body footer .attribution a {
+  color: hsl(186, 14%, 43%);
+  text-decoration: none;
+}
+body footer .attribution a:hover {
+  color: orangered;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    justify-content: center;
+  }
+  body header {
+    justify-content: flex-start;
+    height: 15%;
+  }
+  body main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 45%;
+    min-height: 339px;
+    width: 60%;
+    border-radius: 25px;
+    margin-bottom: 5%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+  body main #submit-calculation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 43%;
+    height: 85%;
+  }
+  body main #submit-calculation #bill h1 {
+    margin-bottom: 2%;
+  }
+  body main #submit-calculation #tip {
+    height: 45%;
+  }
+  body main #submit-calculation #tip form {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 4%;
+    grid-row-gap: 15%;
+    height: 65%;
+  }
+  body main #submit-calculation #people h2 {
+    margin-bottom: 2%;
+  }
+  body main #submit-calculation #people form .error {
+    position: absolute;
+    color: orangered;
+    font-size: 13px;
+    right: 0;
+    top: -110%;
+  }
+  body main #finished-calculation {
+    width: 43%;
+    height: 85%;
+  }
+  body main #finished-calculation #overview .calculation-overview {
+    height: 65%;
+    justify-content: flex-start;
+  }
+  body main #finished-calculation #overview .calculation-overview .total .tip-per-person,
+  body main #finished-calculation #overview .calculation-overview .total .total-per-person {
+    font-size: 40px;
+  }
+  body main #finished-calculation #overview button {
+    height: 12%;
+  }
+  body footer .attribution {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */

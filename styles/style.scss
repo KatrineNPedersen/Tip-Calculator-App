@@ -1,0 +1,331 @@
+//MIXINS
+
+@mixin flexCenter($flexDirection) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flexDirection;
+}
+
+//VARIABLES
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$grayishCyan: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$veryLightGrayishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+body {
+  @include flexCenter(column);
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  height: 100vh;
+  width: 100vw;
+  //   min-height: 933px;
+  //   min-width: 375px;
+  background-color: $lightGrayishCyan;
+  color: $grayishCyan;
+  header {
+    @include flexCenter(column);
+    height: 15%;
+    width: 100%;
+  }
+  main {
+    @include flexCenter(column);
+    background-color: $white;
+    height: 85%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 375px;
+    justify-content: center;
+    #submit-calculation {
+      height: 60%;
+      width: 85%;
+      #bill {
+        height: 20%;
+        width: 100%;
+        h1 {
+          font-size: 17px;
+          margin-bottom: 0px;
+        }
+        form {
+          @include flexCenter(row);
+          justify-content: space-around;
+          background-color: hsl(202, 50%, 97%);
+          border-radius: 5px;
+          height: 50%;
+          &:hover {
+            border: 1px solid $strongCyan;
+            cursor: pointer;
+          }
+          #bill-amount {
+            width: 80%;
+            height: 90%;
+            border: none;
+            outline: none;
+            background-color: hsl(202, 50%, 97%);
+            text-align: right;
+            color: $veryDarkCyan;
+            font-family: "Space Mono", monospace;
+            font-size: 24px;
+          }
+        }
+      }
+      #tip {
+        height: 50%;
+        h2 {
+          font-size: 17px;
+        }
+        form {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: repeat(3, minmax(0, 1fr));
+          grid-column-gap: 6%;
+          grid-row-gap: 10%;
+          height: 70%;
+          .tip {
+            border-radius: 6px;
+            background-color: $veryDarkCyan;
+            color: $white;
+            font-family: "Space Mono", monospace;
+            font-size: 24px;
+            border: none;
+            &:hover {
+              background-color: $strongCyan;
+              color: $veryDarkCyan;
+              cursor: pointer;
+            }
+          }
+          .tip-selected {
+            background-color: $strongCyan;
+            color: $veryDarkCyan;
+          }
+
+          #custom {
+            border: none;
+            outline: none;
+            background-color: hsl(202, 50%, 97%);
+            text-align: right;
+            color: $darkGrayishCyan;
+            font-family: "Space Mono", monospace;
+            font-size: 24px;
+            &:hover {
+              border: 1px solid $strongCyan;
+              cursor: pointer;
+            }
+            &::placeholder {
+              text-align: right;
+              color: $darkGrayishCyan;
+              font-family: "Space Mono", monospace;
+              font-size: 24px;
+              padding-right: 5%;
+            }
+          }
+        }
+      }
+      #people {
+        height: 20%;
+        width: 100%;
+        h2 {
+          font-size: 17px;
+          margin-bottom: 0px;
+        }
+        .error-form {
+          border: 1px solid orangered;
+        }
+        form {
+          @include flexCenter(row);
+          justify-content: space-around;
+          background-color: hsl(202, 50%, 97%);
+          border-radius: 5px;
+          height: 50%;
+          position: relative;
+          &:hover {
+            border: 1px solid $strongCyan;
+            cursor: pointer;
+          }
+          #number-of-people {
+            width: 80%;
+            height: 90%;
+            border: none;
+            outline: none;
+            background-color: hsl(202, 50%, 97%);
+            text-align: right;
+            color: $veryDarkCyan;
+            font-family: "Space Mono", monospace;
+            font-size: 24px;
+          }
+          .error {
+            position: absolute;
+            color: orangered;
+            font-size: 13px;
+            right: 0;
+            top: -75%;
+          }
+          .hidden {
+            display: none;
+          }
+        }
+      }
+    }
+    #finished-calculation {
+      @include flexCenter(column);
+      height: 30%;
+      width: 85%;
+      #overview {
+        @include flexCenter(column);
+        justify-content: space-evenly;
+        background-color: $veryDarkCyan;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        .calculation-overview {
+          @include flexCenter(column);
+          justify-content: space-evenly;
+          width: 85%;
+          height: 50%;
+
+          .tip-total,
+          .amount-total {
+            @include flexCenter(row);
+            justify-content: center;
+            width: 100%;
+            height: 30%;
+            .tip-overview,
+            .total-overview {
+              width: 50%;
+              h3 {
+                font-size: 17px;
+                margin-bottom: 0;
+                color: $white;
+              }
+              h4 {
+                font-size: 12px;
+                margin-top: 0;
+              }
+            }
+            .tip-per-person,
+            .total-per-person {
+              text-align: right;
+              width: 50%;
+              font-size: 30px;
+              color: $strongCyan;
+            }
+          }
+        }
+        button {
+          font-family: "Space Mono", monospace;
+          font-size: 20px;
+          background-color: $strongCyan;
+          width: 85%;
+          height: 20%;
+          border-radius: 8px;
+          border: none;
+          color: $veryDarkCyan;
+          cursor: pointer;
+          &:hover {
+            background-color: $lightGrayishCyan;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 2%;
+    .attribution {
+      font-size: 8px;
+      text-align: center;
+      a {
+        color: $darkGrayishCyan;
+        text-decoration: none;
+        &:hover {
+          color: orangered;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    justify-content: center;
+    header {
+      justify-content: flex-start;
+      height: 15%;
+    }
+    main {
+      @include flexCenter(row);
+      justify-content: space-evenly;
+      height: 45%;
+      min-height: 339px;
+      width: 60%;
+      border-radius: 25px;
+      margin-bottom: 5%;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      #submit-calculation {
+        @include flexCenter(column);
+        justify-content: space-between;
+        width: 43%;
+        height: 85%;
+        #bill {
+          h1 {
+            margin-bottom: 2%;
+          }
+        }
+        #tip {
+          height: 45%;
+          form {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            grid-column-gap: 4%;
+            grid-row-gap: 15%;
+            height: 65%;
+          }
+        }
+        #people {
+          h2 {
+            margin-bottom: 2%;
+          }
+          form {
+            .error {
+              position: absolute;
+              color: orangered;
+              font-size: 13px;
+              right: 0;
+              top: -110%;
+            }
+          }
+        }
+      }
+      #finished-calculation {
+        width: 43%;
+        height: 85%;
+        #overview {
+          .calculation-overview {
+            height: 65%;
+            justify-content: flex-start;
+            .total {
+              .tip-per-person,
+              .total-per-person {
+                font-size: 40px;
+              }
+            }
+          }
+          button {
+            height: 12%;
+          }
+        }
+      }
+    }
+    footer {
+      .attribution {
+        font-size: 12px;
+      }
+    }
+  }
+}
